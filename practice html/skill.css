@@ -1,0 +1,261 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#081b29;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.bg span{
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+background:#00abf020;
+
+border-radius:50%;
+
+filter:blur(25px);
+
+animation:move 10s linear infinite;
+
+}
+
+.bg span:nth-child(1){top:5%;left:10%;}
+.bg span:nth-child(2){top:70%;left:80%;}
+.bg span:nth-child(3){top:30%;left:50%;}
+.bg span:nth-child(4){top:80%;left:20%;}
+
+@keyframes move{
+
+50%{
+
+transform:translateY(-50px);
+
+}
+
+}
+
+/* Header */
+
+header{
+
+position:fixed;
+
+top:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 50px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:60px;
+
+border:1px solid rgba(255,255,255,.1);
+
+z-index:999;
+
+}
+
+.logo img{
+
+width:60px;
+
+transition:.4s;
+
+}
+
+.logo img:hover{
+
+transform:scale(1.1);
+
+}
+
+nav{
+
+display:flex;
+gap:35px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:'';
+
+position:absolute;
+
+bottom:-6px;
+left:0;
+
+width:0;
+
+height:2px;
+
+background:#00abf0;
+
+transition:.4s;
+
+}
+
+nav a:hover::after,
+.active::after{
+
+width:100%;
+
+}
+
+.active,
+nav a:hover{
+
+color:#00abf0;
+
+}
+
+/* Skills */
+
+.skills{
+
+padding:150px 8%;
+
+text-align:center;
+
+}
+
+.skills h4{
+
+color:#00abf0;
+
+letter-spacing:3px;
+
+}
+
+.skills h1{
+
+font-size:50px;
+
+margin:20px 0 60px;
+
+}
+
+.container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 0 30px #00abf0;
+
+}
+
+.card i{
+
+font-size:65px;
+
+color:#00abf0;
+
+margin-bottom:25px;
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+color:#d5d5d5;
+
+line-height:28px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+padding:20px;
+
+border-radius:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.skills h1{
+
+font-size:35px;
+
+}
+
+}
